@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://dx08gegpqyott"]
+
+[ext_resource type="Theme" uid="uid://deiq8qtrcwrg5" path="res://theme.tres" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://epj41dd83kne" path="res://main.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bsqyj6cxwhnf2" path="res://button_goto.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://dm7r3g4tc20gm" path="res://rich_text_label.gd" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://lss4ih0oknwf" path="res://swing_calculator.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bx7oog8fxs0de" path="res://randomizer.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://c5n3l7nb1ovqi" path="res://theme_gen/theme_generator.tscn" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://cdsaxasihmtjm" path="res://dungeon/dungeon.gd" id="7_272bh"]
+
+[node name="Control" type="PanelContainer" unique_id=202532920]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lquwl")
+script = ExtResource("2_0xm2m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1809659102]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="VBoxContainer" unique_id=792475866]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="GotoButton" type="Button" parent="VBoxContainer/Header" unique_id=1133812922]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "<< Back"
+script = ExtResource("3_h2yge")
+target_node = NodePath("../../TabContainer/TabMain")
+hide_if_target_visible = true
+metadata/_custom_type_script = "uid://bsqyj6cxwhnf2"
+
+[node name="LabelTitle" type="Label" parent="VBoxContainer/Header" unique_id=1529465186]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer" unique_id=812484986]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 2
+tabs_visible = false
+
+[node name="TabMain" type="VBoxContainer" parent="VBoxContainer/TabContainer" unique_id=231203485]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label3" type="RichTextLabel" parent="VBoxContainer/TabContainer/TabMain" unique_id=823109991]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Games[/b]"
+fit_content = true
+
+[node name="Button" type="Button" parent="VBoxContainer/TabContainer/TabMain" unique_id=2068072091]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Randomizer"
+script = ExtResource("3_h2yge")
+target_node = NodePath("../../TabRandomizer")
+title_text = "M8 Randomizer"
+metadata/_custom_type_script = "uid://bsqyj6cxwhnf2"
+
+[node name="Button3" type="Button" parent="VBoxContainer/TabContainer/TabMain" unique_id=1526045863]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Dungeon"
+script = ExtResource("3_h2yge")
+target_node = NodePath("../../TabDungeon")
+title_text = "M8 Dungeon"
+metadata/_custom_type_script = "uid://bsqyj6cxwhnf2"
+
+[node name="Label4" type="RichTextLabel" parent="VBoxContainer/TabContainer/TabMain" unique_id=1915115422]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Utilities[/b]"
+fit_content = true
+
+[node name="Button2" type="Button" parent="VBoxContainer/TabContainer/TabMain" unique_id=402870966]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Tick & Swing Calculator"
+script = ExtResource("3_h2yge")
+target_node = NodePath("../../VBoxContainer2")
+title_text = "Tick & Swing Calculator"
+metadata/_custom_type_script = "uid://bsqyj6cxwhnf2"
+
+[node name="Button4" type="Button" parent="VBoxContainer/TabContainer/TabMain" unique_id=1105841737]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Theme Generator"
+script = ExtResource("3_h2yge")
+target_node = NodePath("../../TabThemeGenerator")
+title_text = "Theme Generator"
+metadata/_custom_type_script = "uid://bsqyj6cxwhnf2"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/TabContainer/TabMain" unique_id=1028302793]
+layout_mode = 2
+size_flags_vertical = 10
+bbcode_enabled = true
+text = "[right][url]https://github.com/octoocto/m8toys[/url][/right]"
+fit_content = true
+script = ExtResource("4_1bvp3")
+
+[node name="VBoxContainer2" parent="VBoxContainer/TabContainer" unique_id=652264396 instance=ExtResource("4_lquwl")]
+visible = false
+layout_mode = 2
+
+[node name="TabRandomizer" parent="VBoxContainer/TabContainer" unique_id=574387510 instance=ExtResource("5_7mycd")]
+unique_name_in_owner = true
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="TabThemeGenerator" parent="VBoxContainer/TabContainer" unique_id=1203823810 instance=ExtResource("7_5vw27")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="TabDungeon" type="Container" parent="VBoxContainer/TabContainer" unique_id=214404724]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("7_272bh")
+metadata/_tab_index = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/TabContainer/TabDungeon" unique_id=2089652032]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Rules:
+- For a track, you may create song islands and resample as needed, as long as "
+fit_content = true

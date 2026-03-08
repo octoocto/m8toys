@@ -1,0 +1,59 @@
+02;Sum the Track to mono.
+04;Track must be monophonic.
+06;Limited to one octave or four slices.
+08;Notes/slices must be fixed velocity.
+10;Must be one bar long, repeated as needed.
+12;May only play on beats 1 and 3 OR beats 2 and 4.
+14;May only play on off beats.
+16;Must be played or sequenced in triplets.
+18;May only compose up to three notes per bar.
+20;Must sample a previously Finalized Track. If Room One, reroll.
+22;Roll d6. Up to this many notes/slices per bar.;roll_d6
+24;Sounds must have no pronounced transients.
+26;No two notes/slices may overlap.
+28;Only apply effects that have already been used.
+30;Shorten envelope to be percussive. If Drums, increase attack on amp envelope noticeably.
+32;Must use one sound or note only.
+34;Cannot use the same note or slice twice.
+36;Notes must be played in strict order. (low to high / first to last)
+38;Every note/slice must repeat at least once before another may be played.
+40;This Track must always be present.
+42;Must pass through reverb before composing.
+44;Must pass through delay before composing.
+46;May not use effects.
+48;Choose one effect. It must be applied before composing and cannot be removed. No other effects.
+50;Only use effects that haven’t been used.
+52;Every Bar must have more notes/slices than the previous bar
+54;Must pass through a low-pass filter (1 khz)
+56;Must pass through a high-pass filter (1 khz)
+58;Must be detuned slightly ±10 cents.
+59;Must be side-chained to Target Track. If this is Room One, re-roll.
+60;All effects must be added and Finalized before you choose a sound.
+61;Cannot delete or adjust notes/slices once Room is Finalized.
+62;Mute all rhythms and the metronome for the duration of the Room.
+63;Back to back sample chops cannot be linear/Back to back notes cannot be in the same octave.
+65;Must be hard quantized 1/16 notes/slices.
+66;Must use last Room’s sound source but still honor this Room’s Track Type.
+67;Must pass through autotune/harmonization/pitch correction before Composing.
+68;Must include one deliberate wrong note (out of key if melodic/offbeat if rhythmic).
+69;Set notes/chops to maximum sustain and release. Roll d6. On 5-6, must be polyphonic.;roll_d6
+70;Before Composing, set Volume. Once Composing, Volume cannot be altered.
+71;Can only play on times where drums are being hit. If Drums, Reroll.
+73;Track must abandon its intended Track Type but use a sound for the original Type.
+75;Change Track Type to one used in a previous Room. If Room One, roll on Track Type Table.
+77;After Composing, roll d6. On 4-6, alter pitch by 1 octave.;roll_d6_on_finalize
+78;Once Room is Finalized, volume is locked.
+80;Must pass through Sample Rate Reduction before Composing.
+82;Cannot repeat a sequence or melody in the loop.
+84;Must timestretch sounds generously. If not applicable, resample your source beforehand.
+85;Hum or beatbox your intended idea before Composing. You must stick to this idea.
+87;No Mutation.
+88;Upon Finalizing, Roll d6. On 4-6, delete half the notes/slices.;roll_d6_on_finalize
+89;Repeat last Room’s Mutation. Reroll on Room One.
+90;Purpose of Track changes to match Previous Track. If Room One, roll on Track Type Table.
+92;Must contain same amount of notes/slices as Target Track. If Room One, Room Two must contain same amount of notes as Room One.
+94;Once you begin Composing, The Room finalizes in four minutes. Set a timer.
+96;Must mirror the rhythm of another Track of your choice. If Room One ignore and this becomes the Mutation for Room Two.
+98;Roll d6 after Finalizing. on 6, delete Track. If this is Room One, no Mutation.;roll_d6_on_finalize
+99;Perform live. The first take is the final take.
+100;Roll d6. On 5-6, Roll on the Rare Mutations Table. On 1-4, reroll on this table.;roll_d6_rare

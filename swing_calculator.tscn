@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://lss4ih0oknwf"]
+
+[ext_resource type="Theme" uid="uid://deiq8qtrcwrg5" path="res://theme.tres" id="1_itlbg"]
+[ext_resource type="Script" uid="uid://buhycacb157kv" path="res://swing_calculator.gd" id="1_o6agl"]
+
+[node name="VBoxContainer2" type="VBoxContainer" unique_id=652264396]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_itlbg")
+script = ExtResource("1_o6agl")
+metadata/_tab_index = 1
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=591712651]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Desired[/b]"
+fit_content = true
+
+[node name="GridContainer2" type="GridContainer" parent="." unique_id=1002240164]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="GridContainer2" unique_id=1823780792]
+layout_mode = 2
+text = "Tempo	"
+
+[node name="RangeDesiredTempo" type="SpinBox" parent="GridContainer2" unique_id=190643556]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 999.0
+value = 120.0
+suffix = "bpm"
+
+[node name="Label2" type="Label" parent="GridContainer2" unique_id=1883429765]
+layout_mode = 2
+text = "Ticks per Step"
+
+[node name="RangeDesiredTickRes" type="SpinBox" parent="GridContainer2" unique_id=1382675068]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+min_value = 1.0
+value = 6.0
+
+[node name="Label3" type="Label" parent="GridContainer2" unique_id=24786915]
+layout_mode = 2
+text = "Swing %"
+
+[node name="RangeDesiredSwing" type="SpinBox" parent="GridContainer2" unique_id=1308086664]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+value = 50.0
+suffix = "%"
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=291845089]
+layout_mode = 2
+
+[node name="Label2" type="RichTextLabel" parent="." unique_id=1985142744]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Use these Project Settings[/b]"
+fit_content = true
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1480383947]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+columns = 2
+
+[node name="Label4" type="Label" parent="GridContainer" unique_id=1318240838]
+layout_mode = 2
+text = "Tempo"
+horizontal_alignment = 2
+
+[node name="LabelProjectTempo" type="Label" parent="GridContainer" unique_id=718581613]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer" unique_id=1567287900]
+layout_mode = 2
+text = "Groove"
+horizontal_alignment = 2
+
+[node name="LabelProjectGroove" type="Label" parent="GridContainer" unique_id=1944441151]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="GridContainer" unique_id=1015781670]
+layout_mode = 2
+text = "Swing"
+horizontal_alignment = 2
+
+[node name="LabelProjectSwing" type="Label" parent="GridContainer" unique_id=1477985641]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="GridContainer" unique_id=1541929393]
+layout_mode = 2
+text = "MS per Tick"
+horizontal_alignment = 2
+
+[node name="LabelProjectMSPerTick" type="Label" parent="GridContainer" unique_id=1409120823]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="GridContainer" unique_id=1870087152]
+layout_mode = 2
+text = "MS per 1/8 Tick"
+horizontal_alignment = 2
+
+[node name="LabelProjectMSPer8Tick" type="Label" parent="GridContainer" unique_id=231617468]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2

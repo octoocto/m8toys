@@ -1,0 +1,4 @@
+# 9 note scales
+MESSIAENS MODE3
+# 10 note scales
+MESSIAENS MODE7

@@ -1,0 +1,61 @@
+# This list of custom challenges was various submissions
+# by the M8 community for the M8 Community Jam series.
+heavily bitcrush an instrument
+use reverb in a creative way
+spookify an old song
+include a tempo slowdown
+use an LFO to modulate a colour parameter
+use white noise as an instrument
+one track must be peaking
+use uneven tempo
+every chain must be unique
+use a randomized instrument
+use an LFO that spans the entire song
+use a filter with max res
+all phrases must be unique
+include a buildup and a drop
+write in a genre or style you have not done before
+must set the tempo to 999.00
+use an instrument from someone else's bundle
+use a time signature other than 4/4
+percussion must be off-beat
+percussion must be off-grid
+shape noise into an instrument
+have a melody that is played by different instruments
+can only have one note per phrase
+must include a section where the same melody is played by different instruments
+must make heavy use of the HOP and NXT commands
+must make heavy use of the PVB or PVX commands
+can use no more than two modulators per instrument
+must include an instrument that changes over the whole song
+must use swing and/or syncopation
+must use different tempos throughout the song
+must use every type of amp
+must include some type of noise
+must use the degrade parameter for an instrument
+must use the phaser send effect
+must use the CHA, RAN, RNL, or ERR commands
+must include triplets
+must create and use a stutter effect
+must use the TRIG ENV mod for something other than sidechaining
+must use a synth that sounds like a whistle
+must include a mirrored version of your melody
+must desync track playheads
+try to combine two different genres
+use a disco drumbeat or bassline
+expand a 16-bar loop into a whole track
+must use all three MFX types (chorus, phaser, and flanger)
+must use at least three randomized synths
+must use a synth that sounds like ice cracking
+must use the XRZ (reverb freeze) command
+muse use the RNL command at least once every phrase
+song must be a 24-bar loop
+must use an aux table
+start from and rework a previously unfinished song
+cannot use send effects
+cannot use filters
+cannot use eqs
+cannot use the dj filter
+cannot use drums
+must use the ERR command on all instruments
+must use the DJ filter with high resonance

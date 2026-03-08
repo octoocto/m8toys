@@ -1,0 +1,630 @@
+[gd_scene format=3 uid="uid://bx7oog8fxs0de"]
+
+[ext_resource type="Theme" uid="uid://deiq8qtrcwrg5" path="res://theme.tres" id="1_4653s"]
+[ext_resource type="Script" uid="uid://cduiwhjeb772c" path="res://randomizer.gd" id="1_a3g2u"]
+[ext_resource type="Texture2D" uid="uid://bjjbc7bggiul4" path="res://icons/copy.svg" id="3_2s6uv"]
+[ext_resource type="Script" uid="uid://dn06kabisgses" path="res://button_copy.gd" id="3_6uh32"]
+[ext_resource type="Texture2D" uid="uid://kfc38hdv2hey" path="res://icons/dice-6.svg" id="3_680oq"]
+[ext_resource type="Script" uid="uid://dfnqvw4ug52q7" path="res://rando/tree.gd" id="3_h6xe3"]
+[ext_resource type="Script" uid="uid://dhpv0o6xgvv4v" path="res://randomizer_samples_popup.gd" id="3_qy5ra"]
+[ext_resource type="Script" uid="uid://bjwr721ejtt4" path="res://line_edit_seed.gd" id="4_vfhro"]
+[ext_resource type="Texture2D" uid="uid://cbkymxhetq10n" path="res://icons/help.svg" id="6_y5dcg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_680oq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfhro"]
+content_margin_left = 32.0
+content_margin_top = 32.0
+content_margin_right = 32.0
+content_margin_bottom = 32.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4653s"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="CenterContainer" type="Container" unique_id=1985281706]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4653s")
+script = ExtResource("1_a3g2u")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=42644517]
+layout_mode = 2
+current_tab = 4
+
+[node name="Options" type="VBoxContainer" parent="TabContainer" unique_id=574387510]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_4653s")
+metadata/_tab_index = 0
+
+[node name="Tree" type="Tree" parent="TabContainer/Options" unique_id=675778296]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_680oq")
+columns = 2
+hide_root = true
+select_mode = 1
+script = ExtResource("3_h6xe3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Options" unique_id=142560444]
+layout_mode = 2
+
+[node name="ButtonGenerate" type="Button" parent="TabContainer/Options/HBoxContainer" unique_id=1015479334]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Generate"
+icon = ExtResource("3_680oq")
+
+[node name="LineEditSeed" type="LineEdit" parent="TabContainer/Options/HBoxContainer" unique_id=1291506256]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+placeholder_text = "00 00 00 00 00 00 00 00"
+alignment = 1
+max_length = 23
+select_all_on_focus = true
+script = ExtResource("4_vfhro")
+
+[node name="ButtonCopySeed" type="Button" parent="TabContainer/Options/HBoxContainer" unique_id=1025983057]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("3_2s6uv")
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Options" unique_id=1012733704]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelOutput" type="PanelContainer" parent="TabContainer/Options/MarginContainer" unique_id=1710060227]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vfhro")
+
+[node name="LabelOutput" type="RichTextLabel" parent="TabContainer/Options/MarginContainer/PanelOutput" unique_id=717434203]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/line_separation = 8
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sample Pool" type="MarginContainer" parent="TabContainer" unique_id=1084637233]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sample Pool" unique_id=639162889]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Sample Pool/VBoxContainer" unique_id=2109010209]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ButtonShowSamplePopup" type="Button" parent="TabContainer/Sample Pool/VBoxContainer/HBoxContainer" unique_id=2113169107]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("6_y5dcg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Sample Pool/VBoxContainer/HBoxContainer" unique_id=939944577]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[b]Sample Paths[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="CodeEditSamplePool" type="CodeEdit" parent="TabContainer/Sample Pool/VBoxContainer" unique_id=1944982993]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Paste sample paths here (one per line)..."
+caret_blink = true
+gutters_draw_line_numbers = true
+
+[node name="Challenge Pool" type="MarginContainer" parent="TabContainer" unique_id=1812911588]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Challenge Pool" unique_id=1414675321]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Challenge Pool/VBoxContainer" unique_id=844427597]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[b]Custom Challenges[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="CodeEditChallengePool" type="CodeEdit" parent="TabContainer/Challenge Pool/VBoxContainer" unique_id=990818088]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "# This list of custom challenges was various submissions
+# by the M8 community for the M8 Community Jam series.
+heavily bitcrush an instrument
+use reverb in a creative way
+spookify an old song
+include a tempo slowdown
+use an LFO to modulate a colour parameter
+use white noise as an instrument
+one track must be peaking
+use uneven tempo
+every chain must be unique
+use a randomized instrument
+use an LFO that spans the entire song
+use a filter with max res
+all phrases must be unique
+include a buildup and a drop
+write in a genre or style you have not done before
+must set the tempo to 999.00
+use an instrument from someone else's bundle
+use a time signature other than 4/4
+percussion must be off-beat
+percussion must be off-grid
+shape noise into an instrument
+have a melody that is played by different instruments
+can only have one note per phrase
+must include a section where the same melody is played by different instruments
+must make heavy use of the HOP and NXT commands
+must make heavy use of the PVB or PVX commands
+can use no more than two modulators per instrument
+must include an instrument that changes over the whole song
+must use swing and/or syncopation
+must use different tempos throughout the song
+must use every type of amp
+must include some type of noise
+must use the degrade parameter for an instrument
+must use the phaser send effect
+must use the CHA, RAN, RNL, or ERR commands
+must include triplets
+must create and use a stutter effect
+must use the TRIG ENV mod for something other than sidechaining
+must use a synth that sounds like a whistle
+must include a mirrored version of your melody
+must desync track playheads
+try to combine two different genres
+use a disco drumbeat or bassline
+expand a 16-bar loop into a whole track
+must use all three MFX types (chorus, phaser, and flanger)
+must use at least three randomized synths
+must use a synth that sounds like ice cracking
+must use the XRZ (reverb freeze) command
+muse use the RNL command at least once every phrase
+song must be a 24-bar loop
+must use an aux table
+start from and rework a previously unfinished song
+cannot use send effects
+cannot use filters
+cannot use eqs
+cannot use the dj filter
+cannot use drums
+must use the ERR command on all instruments
+must use the DJ filter with high resonance
+"
+placeholder_text = "Add custom challenges here (one per line)...
+
+"
+caret_blink = true
+gutters_draw_line_numbers = true
+
+[node name="Theme Pool" type="MarginContainer" parent="TabContainer" unique_id=905458491]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Theme Pool" unique_id=1051656440]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Theme Pool/VBoxContainer" unique_id=1733819176]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[b]Custom Themes[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="CodeEditThemePool" type="CodeEdit" parent="TabContainer/Theme Pool/VBoxContainer" unique_id=1498703931]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "# This list of custom themes was various submissions
+# by the M8 community for the M8 Community Jam series.
+fae mood
+first crush
+low-poly breaks
+video games
+eruption
+school is in session
+we ride at dawn
+sunrise
+groove
+sand
+misbehaved
+dream logic
+instructional video
+panopticon
+space jam
+quater-century crisis
+jump scare
+poltergeist
+home improvement commercial
+slice of hand
+zombie zoo
+animal band
+the end of the bloodline
+necrodancer
+skeletunes
+misty-fi
+i'm too old for this
+coming home
+march of time
+good morning?
+colour change
+whiteout
+pile of floofers
+help
+your favorite movie
+holiday food
+chapped lips
+red light, green light
+under the weather
+sweather
+cookie party
+candy
+cereal killer
+drone incursion
+major league
+weather
+ephemeral
+portmanteau
+potpourri
+jingle cells
+paperwork
+keep it simple
+pierce the heavens
+revolution resolution
+trains
+energy
+all hail the sun
+the standard
+the lurker
+fireworks
+thrown
+underwater city
+cellular
+wilderness
+uplift
+proof
+burgers and fries
+furniture music
+adhd
+catharsis
+retro games
+business growth
+biggest beat
+sand castle
+rock n roll
+non-canon
+lacrimosa
+crumbling empire
+jewel tones
+too much coffee
+stacking cheese
+fairytales
+corporate espionage
+pie hole
+slippery soap
+march madness
+laugh it up
+thaw
+arrival
+pump up the jam
+animal
+horizon
+just one more story
+the vacuum void
+random
+stuff coming out both ends
+knobs knobs knobs
+transportation
+flight of the bumblebee
+dystopia
+easter eggs
+april showers bring may flowers
+the future of music is noise
+sunday sunday sunday
+duel
+allergens
+zombies
+junk drawer
+eye of the storm
+ship of theseus
+warmth of the sun
+table(s)
+two for one
+helipad
+rebel nature
+the getaway
+hot, hot sun
+masquerade
+remix
+late night drive
+____wave
+bunnies
+the future of music is noise
+dinosaurs
+time warp
+cadillacs
+breaking time
+dariacore
+endless summer
+empty slot
+banger
+kaiju
+talk show
+bassics
+vault-tech
+dream home
+cooking
+cyberpunk
+swagger
+triphop
+heart light
+drive time
+horror
+miscellaneous misfits
+blues
+cosmic dread
+peace
+swap meet
+candy store
+white sands
+compiler
+long summer nights
+lo-fi
+space
+metal
+mason
+remix
+collab
+slow & low
+squeeze
+life, the universe, and everything
+industrial production
+infinite improbability
+towels
+changing your fate
+vibrations of the universe
+fever dream
+digital watches
+sad robot
+don't go into the woods
+scream
+minus one
+photos in the attic
+my sleep paralysis demon
+mirror dimension
+candles in the catacombs
+the backrooms
+witchcraft
+monster mash
+warp and weft
+micromanagement
+oblique
+remedial spook
+theme park
+fire
+dead leaves disco
+snack break
+road trip
+panic!
+black ice
+retro
+cold
+happiness
+descending
+borrow
+claw machine
+lo-fi winter
+dream and shadow
+slay belches
+blizzard
+demo
+season's greetings
+medicine
+eternal darkness
+snowfall
+ridiculous trends
+new new
+hall of mirrors
+beginning
+fortune telling
+needle feet
+dry
+crowd source
+the great wave
+to err is devine
+work
+cheese
+forest
+minimalist
+cook
+stacking
+melting
+year of the horse
+defrost mode
+chapel/cathedral
+crime
+what's cooking?
+bell
+classical
+the hunt
+cooperative
+kobold
+"
+placeholder_text = "Add custom challenges here (one per line)...
+
+"
+caret_blink = true
+gutters_draw_line_numbers = true
+
+[node name="Config" type="MarginContainer" parent="TabContainer" unique_id=362633226]
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Config" unique_id=1083362503]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Config/VBoxContainer" unique_id=1359167681]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[b]Config[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/Config/VBoxContainer" unique_id=942782428]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "The current config .ini is shown below. You can save this text somewhere, or overwrite it with a custom config and click \"Load from Textbox\" to load it. "
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="ButtonLoadConfig" type="Button" parent="TabContainer/Config/VBoxContainer" unique_id=121364326]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Load from Textbox"
+
+[node name="TextEditConfig" type="TextEdit" parent="TabContainer/Config/VBoxContainer" unique_id=504195954]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Paste config here...
+"
+caret_blink = true
+
+[node name="SamplesPopup" type="MarginContainer" parent="." unique_id=758356605]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+script = ExtResource("3_qy5ra")
+
+[node name="PanelContainer" type="PanelContainer" parent="SamplesPopup" unique_id=179643777]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SamplesPopup/PanelContainer" unique_id=106525894]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SamplesPopup/PanelContainer/VBoxContainer" unique_id=968427072]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Copying your sample paths to your clipboard[/b]
+
+In a terminal:
+1. Navigate to the folder where your samples are.
+2. Run one of the below commands to copy the paths of every sample to your clipboard.
+3. Click \"OK\" to close this popup.
+4. Paste your clipboard into the textbox.
+
+Linux:"
+fit_content = true
+
+[node name="Panel" type="PanelContainer" parent="SamplesPopup/PanelContainer/VBoxContainer" unique_id=984132317]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4653s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SamplesPopup/PanelContainer/VBoxContainer/Panel" unique_id=1778355791]
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="SamplesPopup/PanelContainer/VBoxContainer/Panel/HBoxContainer" unique_id=301340709]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "find . -name '*.wav' -printf '%P\\n' | wl-copy"
+fit_content = true
+vertical_alignment = 2
+
+[node name="Button" type="Button" parent="SamplesPopup/PanelContainer/VBoxContainer/Panel/HBoxContainer" unique_id=1702499537]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.5, 0.5, 0.5, 1)
+icon = ExtResource("3_2s6uv")
+expand_icon = true
+script = ExtResource("3_6uh32")
+target_label = NodePath("../RichTextLabel2")
+
+[node name="HSeparator" type="HSeparator" parent="SamplesPopup/PanelContainer/VBoxContainer" unique_id=321750667]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SamplesPopup/PanelContainer/VBoxContainer" unique_id=1612287277]
+layout_mode = 2
+
+[node name="ButtonCancel" type="Button" parent="SamplesPopup/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1509351415]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OK"
+
+[node name="ButtonClipboard" type="Button" parent="SamplesPopup/PanelContainer/VBoxContainer/HBoxContainer" unique_id=725724275]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Read paths from clipboard"
+
+[node name="Button3" type="Button" parent="SamplesPopup/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1104645315]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Upload paths"

@@ -1,0 +1,43 @@
+[gd_resource type="Theme" format=3 uid="uid://deiq8qtrcwrg5"]
+
+[ext_resource type="FontFile" uid="uid://blgykidy8oxux" path="res://CommitMono-700-Regular.otf" id="1_110ce"]
+[ext_resource type="FontFile" uid="uid://1ofmdyp327h4" path="res://CommitMono-400-Regular.otf" id="1_e1x85"]
+[ext_resource type="FontFile" uid="uid://cytftk3vpa2df" path="res://CommitMono-700-Italic.otf" id="2_05tig"]
+[ext_resource type="FontFile" uid="uid://dg0l5tm137b3x" path="res://CommitMono-400-Italic.otf" id="3_1rmny"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_110ce"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.05, 0.05, 0.05, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1bvp3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_110ce"]
+content_margin_left = 8.0
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[resource]
+default_font = ExtResource("1_e1x85")
+HSeparator/styles/separator = SubResource("StyleBoxEmpty_110ce")
+MarginContainer/constants/margin_bottom = 8
+MarginContainer/constants/margin_left = 8
+MarginContainer/constants/margin_right = 8
+MarginContainer/constants/margin_top = 8
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_0xm2m")
+RichTextLabel/fonts/bold_font = ExtResource("1_110ce")
+RichTextLabel/fonts/bold_italics_font = ExtResource("2_05tig")
+RichTextLabel/fonts/italics_font = ExtResource("3_1rmny")
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_1bvp3")
+Tree/constants/check_h_separation = 12
+Tree/constants/inner_item_margin_left = 12
+Tree/constants/item_margin = 28
+VBoxContainer/constants/separation = 8
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_110ce")
